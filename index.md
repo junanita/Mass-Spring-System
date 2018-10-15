@@ -1,11 +1,15 @@
-## Mass-Spring Systems
+## Introduction 
 
-### Introduction 
+## Description
 
-### Description
+### Symplectic Euler
+### Spring Force
+### Gravitational Force
+### Linear Damping Force
+### Spring Damping Force
 
 
 
-### Examples
-
+## Examples
+A cantilever integrated with Symplectic Euler (forward-backward-euler). Intended to test multiple springs acting on the same particle.
 
