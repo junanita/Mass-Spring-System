@@ -6,14 +6,57 @@ Mass Spring System is an interesting model in Computer graphics, usually used to
 3. TBC
 
 ## Equation of Motion 
+###  Unary forces
+#### Gravitational Force
+The gravatitionl force on each mass is `F = mg`, where g is a gravatitional constant.
 
-### Newton's laws
+#### Gravitational Attraction Force
+The potential energy of two particles interacting via gravity is given by:
 
-### Hook’s law (Spring Force)
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;U(x_i,&space;x_j)&space;=&space;\frac{Gm_im_j}{l}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;U(x_i,&space;x_j)&space;=&space;\frac{Gm_im_j}{l}" title="U(x_i, x_j) = \frac{Gm_im_j}{l}" /></a>
 
-### Gravitational Force
-### Linear Damping Force
-### Spring Damping Force
+where `l` is the distance between the two particles: <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;l&space;=&space;\sqrt{(x_i&space;-&space;x_j)^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;l&space;=&space;\sqrt{(x_i&space;-&space;x_j)^2}" title="l = \sqrt{(x_i - x_j)^2}" /></a> and `n` is a unit-length vector pointing from vertex `xj` to vertex `xi`
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;\widehat{n}&space;=&space;\frac{(xi&space;-&space;xj&space;)}{\sqrt{(xi&space;-&space;xj)^2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;\widehat{n}&space;=&space;\frac{(xi&space;-&space;xj&space;)}{\sqrt{(xi&space;-&space;xj)^2}}" title="\widehat{n} = \frac{(xi - xj )}{\sqrt{(xi - xj)^2}}" /></a>
+And we also have
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;\bigtriangledown&space;_{xi}&space;l&space;=&space;\widehat{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;\bigtriangledown&space;_{xi}&space;l&space;=&space;\widehat{n}" title="\bigtriangledown _{xi} l = \widehat{n}" /></a>, 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;\bigtriangledown&space;_{xj}&space;l&space;=&space;-&space;\widehat{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;\bigtriangledown&space;_{xj}&space;l&space;=&space;-&space;\widehat{n}" title="\bigtriangledown _{xj} l = - \widehat{n}" /></a>
+
+Therefore we got gravatitional force for vertex `xi` and `xj` to be:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;f_{xi}=&space;-\bigtriangledown&space;_{xi}&space;U&space;=&space;-&space;\frac{Gm_im_j}{l^2}&space;\widehat{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;f_{xi}=&space;-\bigtriangledown&space;_{xi}&space;U&space;=&space;-&space;\frac{Gm_im_j}{l^2}&space;\widehat{n}" title="f_{xi}= -\bigtriangledown _{xi} U = - \frac{Gm_im_j}{l^2} \widehat{n}" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;f_{xj}=&space;-\bigtriangledown&space;_{xj}&space;U&space;=&space;\frac{Gm_im_j}{l^2}&space;\widehat{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;f_{xj}=&space;-\bigtriangledown&space;_{xj}&space;U&space;=&space;\frac{Gm_im_j}{l^2}&space;\widehat{n}" title="f_{xj}= -\bigtriangledown _{xj} U = \frac{Gm_im_j}{l^2} \widehat{n}" /></a>
+
+### Viscous Drag
+#### Linear Damping Force
+The ideal viscous drag is the linear damping force that linearly resists a particle’s motion:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;F_i&space;=&space;-\beta&space;v_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;F_i&space;=&space;-\beta&space;v_i" title="F_i = -\beta v_i" /></a>
+
+where <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;\beta" title="\beta" /></a> is a scalar damping constant.
+Note that a damping force, by its very (dissipative) nature, is not conservative, i.e., it does not act to preserve total energy[1].
+
+### N-nary forces
+
+#### Spring Force (Hook’s law)
+In a basic mass-spring system, the springs are the structural elements that hold everything together. 
+
+The potential energy of a spring between a pair of particles at positions `xi` and `xj` is
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;U(xi,&space;xj)&space;=&space;\frac{1}{2}k(l(x_i,&space;x_j)&space;-&space;l_0)^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;U(xi,&space;xj)&space;=&space;\frac{1}{2}k(l(x_i,&space;x_j)&space;-&space;l_0)^2" title="U(xi, xj) = \frac{1}{2}k(l(x_i, x_j) - l_0)^2" /></a>
+
+where `l` would be the same from section **Gravitational Attraction Force**, `l0` denotes the spring’s rest length, and `k` denotes the spring’s stiffness.
+
+Therefore, the spring force on `xi` and `xj`:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;F_{xi}&space;=&space;-&space;\bigtriangledown_{xi}U&space;=&space;-&space;k&space;(l&space;-&space;l_0)&space;\widehat{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;F_{xi}&space;=&space;-&space;\bigtriangledown_{xi}U&space;=&space;-&space;k&space;(l&space;-&space;l_0)&space;\widehat{n}" title="F_{xi} = - \bigtriangledown_{xi}U = - k (l - l_0) \widehat{n}" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;F_{xj}&space;=&space;-&space;\bigtriangledown_{xj}U&space;=&space;k&space;(l&space;-&space;l_0)&space;\widehat{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;F_{xj}&space;=&space;-&space;\bigtriangledown_{xj}U&space;=&space;k&space;(l&space;-&space;l_0)&space;\widehat{n}" title="F_{xj} = - \bigtriangledown_{xj}U = k (l - l_0) \widehat{n}" /></a>
+
+where `n` is the unit-length vector defined from section **Gravitational Attraction Force**.
+
+#### Spring Damping Force
+
 
 ## Integrators
 ### Forward Euler
