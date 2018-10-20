@@ -55,9 +55,13 @@ Therefore, the spring force on `xi` and `xj`:
 
 where `n` is the unit-length vector defined from section **Gravitational Attraction Force**.
 
+Example below shows the behavior of the decreasing rest length `l0` integrated with symplectic Euler (scene xml from [1]).
+
 ![SpringForce](https://media.giphy.com/media/piKaMfpEpFaQ3F8Try/giphy.gif)
 
 #### Spring Damping Force
+
+Example below shows the behavior of increasing the damping coefficient. Multiple springs with increasing damping coefficients oriented along the horizontal (scene xml from [1]).
 
 ![SpringDampingForce](https://media.giphy.com/media/EBodbd4F9r0B5rteTr/giphy.gif)
 
@@ -72,7 +76,8 @@ The Forward Euler, also called Explicit Euler, is a first-order numerical proced
 
 where `q` is the configuration/position of the mass.
 
-Though simple, Euler’s method is not accurate. Consider the case of a 2D function f whose integral curves are concentric circles. A point p governed by f is supposed to orbit forever on whichever circle it started on. Instead, with each Euler step, p will move on a straight line to a circle of larger radius, so that its path will follow an outward spiral. Shrinking the stepsize will slow the rate of this outward drift, but never eliminate it[3]. 
+Though simple, Euler’s method is not accurate. Consider the case of a 2D function f whose integral curves are concentric circles. A point p governed by f is supposed to orbit forever on whichever circle it started on. Instead, with each Euler step, p will move on a straight line to a circle of larger radius, so that its path will follow an outward spiral. Shrinking the stepsize will slow the rate of this outward drift, but never eliminate it[3] (scene xml from [1]).
+
 ![forwardEuler](https://media.giphy.com/media/14SFyXJ9AnDxmdMX7X/giphy.gif)
 
 ### Backward Euler
@@ -89,15 +94,16 @@ The Symplectic Euler integrator is also called semi-implicit Euler or forward-ba
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;\dot{q}^{n&plus;1}&space;=&space;\dot{q}^n&space;&plus;&space;h&space;M^{-1}F(q^{n},&space;\dot{q}^{n})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;\dot{q}^{n&plus;1}&space;=&space;\dot{q}^n&space;&plus;&space;h&space;M^{-1}F(q^{n},&space;\dot{q}^{n})" title="\dot{q}^{n+1} = \dot{q}^n + h M^{-1}F(q^{n}, \dot{q}^{n})" /></a>
 
-Unlike Forward Euler that produces an unstable orbit and ‘spiral outward,’ Symplectic Euler could produce a stable orbit.
+Unlike Forward Euler that produces an unstable orbit and ‘spiral outward,’ Symplectic Euler could produce a stable orbit (scene xml from [1]).
+
 ![Symplectic Euler](https://media.giphy.com/media/9A3sYUICIxe8y3F25D/giphy.gif)
 
 ## Examples
-### Multiple springs
-Multiple springs with increasing damping coefficients oriented along the horizontal and slightly stretched from their rest lengths. Intended to test the behavior of increasing the damping coefficient.
 
 ### Cantilever
-A cantilever integrated with Symplectic Euler (forward-backward-euler). Intended to test multiple springs acting on the same particle.
+Example below shows multiple springs acting on the same particle. A cantilever integrated with Symplectic Euler (scene xml from [1]).
+
+![cantilever](https://media.giphy.com/media/dlbGP1EKJTcV1va4An/giphy.gif)
 
 
 ### References:
