@@ -55,7 +55,11 @@ Therefore, the spring force on `xi` and `xj`:
 
 where `n` is the unit-length vector defined from section **Gravitational Attraction Force**.
 
+![SpringForce](https://media.giphy.com/media/piKaMfpEpFaQ3F8Try/giphy.gif)
+
 #### Spring Damping Force
+
+![SpringDampingForce](https://media.giphy.com/media/EBodbd4F9r0B5rteTr/giphy.gif)
 
 
 ## Integrators
@@ -66,10 +70,10 @@ The Forward Euler, also called Explicit Euler, is a first-order numerical proced
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;\dot{q}^{n&plus;1}&space;=&space;\dot{q}^n&space;&plus;&space;h&space;M^{-1}F(q^{n},&space;\dot{q}^{n})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;\dot{q}^{n&plus;1}&space;=&space;\dot{q}^n&space;&plus;&space;h&space;M^{-1}F(q^{n},&space;\dot{q}^{n})" title="\dot{q}^{n+1} = \dot{q}^n + h M^{-1}F(q^{n}, \dot{q}^{n})" /></a>
 
-where `q` is the configuration/position of the mass. 
+where `q` is the configuration/position of the mass.
 
 Though simple, Euler’s method is not accurate. Consider the case of a 2D function f whose integral curves are concentric circles. A point p governed by f is supposed to orbit forever on whichever circle it started on. Instead, with each Euler step, p will move on a straight line to a circle of larger radius, so that its path will follow an outward spiral. Shrinking the stepsize will slow the rate of this outward drift, but never eliminate it[3]. 
-
+![forwardEuler](https://media.giphy.com/media/14SFyXJ9AnDxmdMX7X/giphy.gif)
 
 ### Backward Euler
 Same as Forward Euler, the Backward Euler method, also called Implicit Euler, is an another commonly used integrator for solving ODEs. However, the problem with this method is that the unknowns (the values for time step `n + 1`) are present on both sides of the formula and it becomes an equation that needs to be solved, rather than a direct evaluation[1].
@@ -86,7 +90,7 @@ The Symplectic Euler integrator is also called semi-implicit Euler or forward-ba
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\fn_phv&space;\dot{q}^{n&plus;1}&space;=&space;\dot{q}^n&space;&plus;&space;h&space;M^{-1}F(q^{n},&space;\dot{q}^{n})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\fn_phv&space;\dot{q}^{n&plus;1}&space;=&space;\dot{q}^n&space;&plus;&space;h&space;M^{-1}F(q^{n},&space;\dot{q}^{n})" title="\dot{q}^{n+1} = \dot{q}^n + h M^{-1}F(q^{n}, \dot{q}^{n})" /></a>
 
 Unlike Forward Euler that produces an unstable orbit and ‘spiral outward,’ Symplectic Euler could produce a stable orbit.
-
+![Symplectic Euler](https://media.giphy.com/media/9A3sYUICIxe8y3F25D/giphy.gif)
 
 ## Examples
 ### Multiple springs
