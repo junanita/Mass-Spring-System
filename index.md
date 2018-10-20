@@ -61,13 +61,18 @@ where `n` is the unit-length vector defined from section **Gravitational Attract
 
 Example below shows the behavior of the decreasing rest length `l0` integrated with symplectic Euler (scene xml from [1]).
 
-![SpringForce](https://media.giphy.com/media/piKaMfpEpFaQ3F8Try/giphy.gif)
+<p align="center"> 
+<img src="https://media.giphy.com/media/piKaMfpEpFaQ3F8Try/giphy.gif">
+</p>
 
 #### Spring Damping Force
 
 Example below shows the behavior of increasing the damping coefficient. Multiple springs with increasing damping coefficients oriented along the horizontal (scene xml from [1]).
 
-![SpringDampingForce](https://media.giphy.com/media/EBodbd4F9r0B5rteTr/giphy.gif)
+
+<p align="center"> 
+<img src="https://media.giphy.com/media/EBodbd4F9r0B5rteTr/giphy.gif">
+</p>
 
 
 ## Integrators
@@ -82,7 +87,9 @@ where `q` is the configuration/position of the mass.
 
 Though simple, Euler’s method is not accurate. Consider the case of a 2D function f whose integral curves are concentric circles. A point p governed by f is supposed to orbit forever on whichever circle it started on. Instead, with each Euler step, p will move on a straight line to a circle of larger radius, so that its path will follow an outward spiral. Shrinking the stepsize will slow the rate of this outward drift, but never eliminate it[3] (scene xml from [1]).
 
-![forwardEuler](https://media.giphy.com/media/14SFyXJ9AnDxmdMX7X/giphy.gif)
+<p align="center"> 
+<img src="https://media.giphy.com/media/14SFyXJ9AnDxmdMX7X/giphy.gif">
+</p>
 
 ### Backward Euler
 Same as Forward Euler, the Backward Euler method, also called Implicit Euler, is an another commonly used integrator for solving ODEs. However, the problem with this method is that the unknowns (the values for time step `n + 1`) are present on both sides of the formula and it becomes an equation that needs to be solved, rather than a direct evaluation[1].
@@ -100,7 +107,10 @@ The Symplectic Euler integrator is also called semi-implicit Euler or forward-ba
 
 Unlike Forward Euler that produces an unstable orbit and ‘spiral outward,’ Symplectic Euler could produce a stable orbit (scene xml from [1]).
 
-![Symplectic Euler](https://media.giphy.com/media/9A3sYUICIxe8y3F25D/giphy.gif)
+
+<p align="center"> 
+<img src="https://media.giphy.com/media/9A3sYUICIxe8y3F25D/giphy.gif">
+</p>
 
 ## Examples
 
