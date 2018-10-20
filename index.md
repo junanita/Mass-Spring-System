@@ -1,3 +1,7 @@
+<p align="center"> 
+<img src="https://media.giphy.com/media/1zjR1wpytzFWvNbe3z/giphy.gif">
+</p>
+
 ## Introduction 
 
 Mass Spring System is an interesting model in Computer graphics, usually used to simulate cloth. This model includes several mass points which connected to each other by springs, and springs will expand, stretch and exterting forces on the mass points. To make it clear, I will break down the system into following categories: 
@@ -103,7 +107,9 @@ Unlike Forward Euler that produces an unstable orbit and ‘spiral outward,’ S
 ### Cantilever
 Example below shows multiple springs acting on the same particle. A cantilever integrated with Symplectic Euler (scene xml from [1]).
 
-![cantilever](https://media.giphy.com/media/dlbGP1EKJTcV1va4An/giphy.gif)
+<p align="center"> 
+<img src="https://media.giphy.com/media/dlbGP1EKJTcV1va4An/giphy.gif">
+</p>
 
 
 ### References:
