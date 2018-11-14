@@ -12,7 +12,7 @@ Mass Spring System is an interesting model in Computer graphics, usually used to
 ## Equation of Motion 
 ###  Unary forces
 #### Gravitational Force
-The gravatitionl force on each mass is `F = mg`, where g is a gravatitional constant.
+The gravatitionl force on each mass is `F = mG`, where g is a gravatitional constant.
 
 #### Gravitational Attraction Force
 The potential energy of two particles interacting via gravity is given by:
